@@ -1,0 +1,38 @@
+function randomComputer(){
+  let options = ['rock', 'paper', 'scissors']
+  return (options[Math.floor(Math.random() *options.length)])
+}
+x = randomComputer()
+console.log( 'computer selected' + x)
+
+function playerSelect() {let y = prompt('rock, paper or scissor?')
+ return y.toLowerCase()
+}
+let z = playerSelect()
+console.log('player selected', z)
+
+
+function playRound(playerSelect) 
+{
+  const compSelect = randomComputer()
+if 
+((compSelect === 'rock' && playerSelect === 'rock') || 
+(compSelect === 'paper' && playerSelect === 'paper') || 
+(compSelect === 'scissors' && playerSelect === 'scissors'))
+{log = 'its a tie'}
+
+else if 
+((compSelect === 'scissors' && playerSelect === 'paper') || 
+(compSelect === 'rock' && playerSelect === 'scissors ') || 
+(compSelect === 'paper' && playerSelect === 'rock' )) 
+{log = 'you lose' + compSelect + 'beats' + playerSelect }
+
+else if
+((compSelect === 'paper' && playerSelect === 'scissors') || 
+(compSelect === 'scissors' && playerSelect === 'rock') || 
+(compSelect === 'rock' && playerSelect === 'paper' )) 
+{log = 'you win' + playerSelect + 'beats' + compSelect }
+return log;
+}
+let c = playRound()
+console.log(c)
