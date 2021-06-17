@@ -1,0 +1,46 @@
+// Getting random from computer
+function randomComputer(){
+  let options = ['rock', 'paper', 'scissors']
+  let cmpGUess =  (options[Math.floor(Math.random() *options.length)])
+  console.log ('computer selected',cmpGUess)
+  return cmpGUess
+}
+
+
+// / getting player input
+function playerSelect() {playerGuess = prompt('rock, paper or scissors?').toLowerCase();
+console.log ('player selected' , playerGuess)
+ return playerGuess
+
+}
+
+
+//Round logic
+
+function playRound(playerSelect, randomComputer)
+{ 
+  var result = ''
+if ((randomComputer === 'rock' && playerSelect === 'rock') || 
+(randomComputer === 'paper' && playerSelect === 'paper') || 
+(randomComputer === 'scissors' && playerSelect === 'scissors'))
+{result = 'its a tie'}
+
+else if 
+((randomComputer === 'scissors' && playerSelect === 'paper') || 
+(randomComputer === 'rock' && playerSelect === 'scissors') || 
+(randomComputer === 'paper' && playerSelect === 'rock' )) 
+ {result = 'you lose' }
+
+else if
+((randomComputer === 'paper' && playerSelect === 'scissors') || 
+(randomComputer === 'scissors' && playerSelect === 'rock') || 
+(randomComputer === 'rock' && playerSelect === 'paper' )) 
+{result = 'you win' }
+
+else result = 'please choose a valid option'
+
+return result 
+
+} 
+ let play = playRound(playerSelect(), randomComputer())
+console.log(play)
